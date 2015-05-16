@@ -5,6 +5,8 @@
  */
 package com.dellnaresh.common.remote.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -74,6 +76,7 @@ public class BadmintonHire implements Serializable {
     @Column(name = "MoneyPaid")
     private long moneyPaid;
     @OneToMany(mappedBy = "hireId")
+    @JsonIgnore
     private Collection<BadmintonAccount> badmintonAccountCollection;
     @JoinColumn(name = "Payer", referencedColumnName = "ID")
     @ManyToOne(optional = false)

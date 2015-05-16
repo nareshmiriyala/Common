@@ -5,6 +5,8 @@
  */
 package com.dellnaresh.common.remote.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -47,6 +49,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Player.findByEndDate", query = "SELECT p FROM Player p WHERE p.endDate = :endDate"),
     @NamedQuery(name = "Player.findByActive", query = "SELECT p FROM Player p WHERE p.active = :active")})
 public class Player implements Serializable {
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "player")
     private Users users;
     private static final long serialVersionUID = 1L;
