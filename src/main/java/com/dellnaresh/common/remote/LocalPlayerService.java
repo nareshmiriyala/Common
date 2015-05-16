@@ -1,9 +1,5 @@
 package com.dellnaresh.common.remote;
 
-import com.dellnaresh.common.remote.PlayerService;
-import com.dellnaresh.common.remote.entities.BadimintionHire;
-import com.dellnaresh.common.remote.entities.Player;
-
 import javax.ejb.Local;
 
 /**

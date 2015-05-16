@@ -35,14 +35,14 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "badimintion_hire")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "BadimintionHire.findAll", query = "SELECT b FROM BadimintionHire b"),
-    @NamedQuery(name = "BadimintionHire.findById", query = "SELECT b FROM BadimintionHire b WHERE b.id = :id"),
-    @NamedQuery(name = "BadimintionHire.findByCourtName", query = "SELECT b FROM BadimintionHire b WHERE b.courtName = :courtName"),
-    @NamedQuery(name = "BadimintionHire.findByDateHired", query = "SELECT b FROM BadimintionHire b WHERE b.dateHired = :dateHired"),
-    @NamedQuery(name = "BadimintionHire.findByStartTime", query = "SELECT b FROM BadimintionHire b WHERE b.startTime = :startTime"),
-    @NamedQuery(name = "BadimintionHire.findByEndTime", query = "SELECT b FROM BadimintionHire b WHERE b.endTime = :endTime"),
-    @NamedQuery(name = "BadimintionHire.findByMoneyPaid", query = "SELECT b FROM BadimintionHire b WHERE b.moneyPaid = :moneyPaid")})
-public class BadimintionHire implements Serializable {
+    @NamedQuery(name = "BadimintionHire.findAll", query = "SELECT b FROM BadmintonHire b"),
+    @NamedQuery(name = "BadimintionHire.findById", query = "SELECT b FROM BadmintonHire b WHERE b.id = :id"),
+    @NamedQuery(name = "BadimintionHire.findByCourtName", query = "SELECT b FROM BadmintonHire b WHERE b.courtName = :courtName"),
+    @NamedQuery(name = "BadimintionHire.findByDateHired", query = "SELECT b FROM BadmintonHire b WHERE b.dateHired = :dateHired"),
+    @NamedQuery(name = "BadimintionHire.findByStartTime", query = "SELECT b FROM BadmintonHire b WHERE b.startTime = :startTime"),
+    @NamedQuery(name = "BadimintionHire.findByEndTime", query = "SELECT b FROM BadmintonHire b WHERE b.endTime = :endTime"),
+    @NamedQuery(name = "BadimintionHire.findByMoneyPaid", query = "SELECT b FROM BadmintonHire b WHERE b.moneyPaid = :moneyPaid")})
+public class BadmintonHire implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -74,19 +74,19 @@ public class BadimintionHire implements Serializable {
     @Column(name = "MoneyPaid")
     private long moneyPaid;
     @OneToMany(mappedBy = "hireId")
-    private Collection<Badminitionaccount> badminitionaccountCollection;
+    private Collection<Badmintonaccount> BadmintonaccountCollection;
     @JoinColumn(name = "Payer", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Player payer;
 
-    public BadimintionHire() {
+    public BadmintonHire() {
     }
 
-    public BadimintionHire(Long id) {
+    public BadmintonHire(Long id) {
         this.id = id;
     }
 
-    public BadimintionHire(Long id, String courtName, Date dateHired, Date startTime, Date endTime, long moneyPaid) {
+    public BadmintonHire(Long id, String courtName, Date dateHired, Date startTime, Date endTime, long moneyPaid) {
         this.id = id;
         this.courtName = courtName;
         this.dateHired = dateHired;
@@ -144,12 +144,12 @@ public class BadimintionHire implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Badminitionaccount> getBadminitionaccountCollection() {
-        return badminitionaccountCollection;
+    public Collection<Badmintonaccount> getBadmintonaccountCollection() {
+        return BadmintonaccountCollection;
     }
 
-    public void setBadminitionaccountCollection(Collection<Badminitionaccount> badminitionaccountCollection) {
-        this.badminitionaccountCollection = badminitionaccountCollection;
+    public void setBadmintonaccountCollection(Collection<Badmintonaccount> BadmintonaccountCollection) {
+        this.BadmintonaccountCollection = BadmintonaccountCollection;
     }
 
     public Player getPayer() {
@@ -170,10 +170,10 @@ public class BadimintionHire implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BadimintionHire)) {
+        if (!(object instanceof BadmintonHire)) {
             return false;
         }
-        BadimintionHire other = (BadimintionHire) object;
+        BadmintonHire other = (BadmintonHire) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

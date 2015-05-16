@@ -93,9 +93,9 @@ public class Player implements Serializable {
     @Column(name = "Active")
     private short active;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "playerId")
-    private Collection<Badminitionaccount> badminitionaccountCollection;
+    private Collection<Badmintonaccount> BadmintonaccountCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "payer")
-    private Collection<BadimintionHire> badimintionHireCollection;
+    private Collection<BadmintonHire> badmintonHireCollection;
 
     public Player() {
     }
@@ -195,21 +195,21 @@ public class Player implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Badminitionaccount> getBadminitionaccountCollection() {
-        return badminitionaccountCollection;
+    public Collection<Badmintonaccount> getBadmintonaccountCollection() {
+        return BadmintonaccountCollection;
     }
 
-    public void setBadminitionaccountCollection(Collection<Badminitionaccount> badminitionaccountCollection) {
-        this.badminitionaccountCollection = badminitionaccountCollection;
+    public void setBadmintonaccountCollection(Collection<Badmintonaccount> BadmintonaccountCollection) {
+        this.BadmintonaccountCollection = BadmintonaccountCollection;
     }
 
     @XmlTransient
-    public Collection<BadimintionHire> getBadimintionHireCollection() {
-        return badimintionHireCollection;
+    public Collection<BadmintonHire> getBadmintonHireCollection() {
+        return badmintonHireCollection;
     }
 
-    public void setBadimintionHireCollection(Collection<BadimintionHire> badimintionHireCollection) {
-        this.badimintionHireCollection = badimintionHireCollection;
+    public void setBadmintonHireCollection(Collection<BadmintonHire> badmintonHireCollection) {
+        this.badmintonHireCollection = badmintonHireCollection;
     }
 
     @Override

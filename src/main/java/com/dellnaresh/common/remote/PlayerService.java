@@ -1,9 +1,8 @@
 package com.dellnaresh.common.remote;
 
-import com.dellnaresh.common.remote.entities.BadimintionHire;
+import com.dellnaresh.common.remote.entities.BadmintonHire;
 import com.dellnaresh.common.remote.entities.Player;
 
-import javax.xml.ws.Response;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ import java.util.List;
  */
 public interface PlayerService {
     public void createPlayer(Player player) throws Exception;
-    public void hireCourt(BadimintionHire badimintionHire) throws Exception;
+    public void hireCourt(BadmintonHire badmintonHire) throws Exception;
     public Player getPlayer(String username) throws Exception;
-    public List<BadimintionHire> getHiredCourts(int payerId) throws Exception;
+    public List<BadmintonHire> getHiredCourts(int payerId) throws Exception;
 }
