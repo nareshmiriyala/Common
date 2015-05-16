@@ -32,16 +32,16 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author nareshm
  */
 @Entity
-@Table(name = "badimintion_hire")
+@Table(name = "badminton_hire")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "BadimintionHire.findAll", query = "SELECT b FROM BadmintonHire b"),
-    @NamedQuery(name = "BadimintionHire.findById", query = "SELECT b FROM BadmintonHire b WHERE b.id = :id"),
-    @NamedQuery(name = "BadimintionHire.findByCourtName", query = "SELECT b FROM BadmintonHire b WHERE b.courtName = :courtName"),
-    @NamedQuery(name = "BadimintionHire.findByDateHired", query = "SELECT b FROM BadmintonHire b WHERE b.dateHired = :dateHired"),
-    @NamedQuery(name = "BadimintionHire.findByStartTime", query = "SELECT b FROM BadmintonHire b WHERE b.startTime = :startTime"),
-    @NamedQuery(name = "BadimintionHire.findByEndTime", query = "SELECT b FROM BadmintonHire b WHERE b.endTime = :endTime"),
-    @NamedQuery(name = "BadimintionHire.findByMoneyPaid", query = "SELECT b FROM BadmintonHire b WHERE b.moneyPaid = :moneyPaid")})
+    @NamedQuery(name = "BadmintonHire.findAll", query = "SELECT b FROM BadmintonHire b"),
+    @NamedQuery(name = "BadmintonHire.findById", query = "SELECT b FROM BadmintonHire b WHERE b.id = :id"),
+    @NamedQuery(name = "BadmintonHire.findByCourtName", query = "SELECT b FROM BadmintonHire b WHERE b.courtName = :courtName"),
+    @NamedQuery(name = "BadmintonHire.findByDateHired", query = "SELECT b FROM BadmintonHire b WHERE b.dateHired = :dateHired"),
+    @NamedQuery(name = "BadmintonHire.findByStartTime", query = "SELECT b FROM BadmintonHire b WHERE b.startTime = :startTime"),
+    @NamedQuery(name = "BadmintonHire.findByEndTime", query = "SELECT b FROM BadmintonHire b WHERE b.endTime = :endTime"),
+    @NamedQuery(name = "BadmintonHire.findByMoneyPaid", query = "SELECT b FROM BadmintonHire b WHERE b.moneyPaid = :moneyPaid")})
 public class BadmintonHire implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -182,7 +182,7 @@ public class BadmintonHire implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dellnaresh.common.remote.entities.BadimintionHire[ id=" + id + " ]";
+        return "com.dellnaresh.common.remote.entities.BadmintonHire[ id=" + id + " ]";
     }
     
 }
