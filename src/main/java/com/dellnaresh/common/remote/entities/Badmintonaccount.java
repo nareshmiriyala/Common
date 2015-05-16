@@ -29,17 +29,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author nareshm
  */
 @Entity
-@Table(name = "Badmintonaccount")
+@Table(name = "BadmintonAccount")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Badmintonaccount.findAll", query = "SELECT b FROM Badmintonaccount b"),
-    @NamedQuery(name = "Badmintonaccount.findById", query = "SELECT b FROM Badmintonaccount b WHERE b.id = :id"),
-    @NamedQuery(name = "Badmintonaccount.findByMoneyRecieved", query = "SELECT b FROM Badmintonaccount b WHERE b.moneyRecieved = :moneyRecieved"),
-    @NamedQuery(name = "Badmintonaccount.findByMoneyPaid", query = "SELECT b FROM Badmintonaccount b WHERE b.moneyPaid = :moneyPaid"),
-    @NamedQuery(name = "Badmintonaccount.findByPurpose", query = "SELECT b FROM Badmintonaccount b WHERE b.purpose = :purpose"),
-    @NamedQuery(name = "Badmintonaccount.findByCreated", query = "SELECT b FROM Badmintonaccount b WHERE b.created = :created"),
-    @NamedQuery(name = "Badmintonaccount.findByLastModified", query = "SELECT b FROM Badmintonaccount b WHERE b.lastModified = :lastModified")})
-public class Badmintonaccount implements Serializable {
+    @NamedQuery(name = "BadmintonAccount.findAll", query = "SELECT b FROM BadmintonAccount b"),
+    @NamedQuery(name = "BadmintonAccount.findById", query = "SELECT b FROM BadmintonAccount b WHERE b.id = :id"),
+    @NamedQuery(name = "BadmintonAccount.findByMoneyRecieved", query = "SELECT b FROM BadmintonAccount b WHERE b.moneyRecieved = :moneyRecieved"),
+    @NamedQuery(name = "BadmintonAccount.findByMoneyPaid", query = "SELECT b FROM BadmintonAccount b WHERE b.moneyPaid = :moneyPaid"),
+    @NamedQuery(name = "BadmintonAccount.findByPurpose", query = "SELECT b FROM BadmintonAccount b WHERE b.purpose = :purpose"),
+    @NamedQuery(name = "BadmintonAccount.findByCreated", query = "SELECT b FROM BadmintonAccount b WHERE b.created = :created"),
+    @NamedQuery(name = "BadmintonAccount.findByLastModified", query = "SELECT b FROM BadmintonAccount b WHERE b.lastModified = :lastModified")})
+public class BadmintonAccount implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -76,14 +76,14 @@ public class Badmintonaccount implements Serializable {
     @ManyToOne(optional = false)
     private Player playerId;
 
-    public Badmintonaccount() {
+    public BadmintonAccount() {
     }
 
-    public Badmintonaccount(Long id) {
+    public BadmintonAccount(Long id) {
         this.id = id;
     }
 
-    public Badmintonaccount(Long id, long moneyRecieved, long moneyPaid, String purpose, Date created, Date lastModified) {
+    public BadmintonAccount(Long id, long moneyRecieved, long moneyPaid, String purpose, Date created, Date lastModified) {
         this.id = id;
         this.moneyRecieved = moneyRecieved;
         this.moneyPaid = moneyPaid;
@@ -166,10 +166,10 @@ public class Badmintonaccount implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Badmintonaccount)) {
+        if (!(object instanceof BadmintonAccount)) {
             return false;
         }
-        Badmintonaccount other = (Badmintonaccount) object;
+        BadmintonAccount other = (BadmintonAccount) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -178,7 +178,7 @@ public class Badmintonaccount implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dellnaresh.common.remote.entities.Badmintonaccount[ id=" + id + " ]";
+        return "com.dellnaresh.common.remote.entities.BadmintonAccount[ id=" + id + " ]";
     }
     
 }

@@ -74,7 +74,7 @@ public class BadmintonHire implements Serializable {
     @Column(name = "MoneyPaid")
     private long moneyPaid;
     @OneToMany(mappedBy = "hireId")
-    private Collection<Badmintonaccount> BadmintonaccountCollection;
+    private Collection<BadmintonAccount> badmintonAccountCollection;
     @JoinColumn(name = "Payer", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Player payer;
@@ -144,12 +144,12 @@ public class BadmintonHire implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Badmintonaccount> getBadmintonaccountCollection() {
-        return BadmintonaccountCollection;
+    public Collection<BadmintonAccount> getBadmintonAccountCollection() {
+        return badmintonAccountCollection;
     }
 
-    public void setBadmintonaccountCollection(Collection<Badmintonaccount> BadmintonaccountCollection) {
-        this.BadmintonaccountCollection = BadmintonaccountCollection;
+    public void setBadmintonAccountCollection(Collection<BadmintonAccount> badmintonAccountCollection) {
+        this.badmintonAccountCollection = badmintonAccountCollection;
     }
 
     public Player getPayer() {

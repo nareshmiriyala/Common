@@ -93,7 +93,7 @@ public class Player implements Serializable {
     @Column(name = "Active")
     private short active;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "playerId")
-    private Collection<Badmintonaccount> BadmintonaccountCollection;
+    private Collection<BadmintonAccount> badmintonAccountCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "payer")
     private Collection<BadmintonHire> badmintonHireCollection;
 
@@ -195,12 +195,12 @@ public class Player implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Badmintonaccount> getBadmintonaccountCollection() {
-        return BadmintonaccountCollection;
+    public Collection<BadmintonAccount> getBadmintonAccountCollection() {
+        return badmintonAccountCollection;
     }
 
-    public void setBadmintonaccountCollection(Collection<Badmintonaccount> BadmintonaccountCollection) {
-        this.BadmintonaccountCollection = BadmintonaccountCollection;
+    public void setBadmintonAccountCollection(Collection<BadmintonAccount> badmintonAccountCollection) {
+        this.badmintonAccountCollection = badmintonAccountCollection;
     }
 
     @XmlTransient
