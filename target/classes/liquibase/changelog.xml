@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet author="nareshm (generated)" id="1439723159321-1">
+        <createTable catalogName="badmintonaccount" tableName="player">
+            <column autoIncrement="true" name="ID" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Active" type="SMALLINT(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Address" type="VARCHAR(20)"/>
+            <column name="contactNo" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EmailID" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EndDate" type="datetime"/>
+            <column name="FirstName" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JoiningDate" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastName" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MiddleName" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-2">
+        <createTable catalogName="badmintonaccount" tableName="badminton_hire">
+            <column autoIncrement="true" name="ID" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="CourtName" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DateHired" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EndTime" type="time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MoneyPaid" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="StartTime" type="time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Payer" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-3">
+        <createTable catalogName="badmintonaccount" tableName="badmintonaccount">
+            <column autoIncrement="true" name="ID" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastModified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MoneyPaid" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MoneyRecieved" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Purpose" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HireId" type="BIGINT(19)"/>
+            <column name="PlayerId" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-4">
+        <createTable catalogName="badmintonaccount" tableName="users">
+            <column name="login" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-5">
+        <createTable catalogName="badmintonaccount" tableName="user_roles">
+            <column autoIncrement="true" name="roleid" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userid" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-6">
+        <addPrimaryKey catalogName="badmintonaccount" columnNames="login" constraintName="PRIMARY" tableName="users"/>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-7">
+        <addForeignKeyConstraint baseColumnNames="PlayerId" baseTableCatalogName="badmintonaccount" baseTableName="badmintonaccount" constraintName="FK_fitpft3kotjvlleh2r6pc8t9e" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableCatalogName="badmintonaccount" referencedTableName="player"/>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-8">
+        <addForeignKeyConstraint baseColumnNames="userid" baseTableCatalogName="badmintonaccount" baseTableName="user_roles" constraintName="FK_knhvca6ufff7opo0ajx00opx5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="login" referencedTableCatalogName="badmintonaccount" referencedTableName="users"/>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-9">
+        <addForeignKeyConstraint baseColumnNames="HireId" baseTableCatalogName="badmintonaccount" baseTableName="badmintonaccount" constraintName="FK_71itahlhudahtksg5oh0fofb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableCatalogName="badmintonaccount" referencedTableName="badminton_hire"/>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-10">
+        <addForeignKeyConstraint baseColumnNames="login" baseTableCatalogName="badmintonaccount" baseTableName="users" constraintName="FK_ow0gan20590jrb00upg3va2fn" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableCatalogName="badmintonaccount" referencedTableName="player"/>
+    </changeSet>
+    <changeSet author="nareshm (generated)" id="1439723159321-11">
+        <addForeignKeyConstraint baseColumnNames="Payer" baseTableCatalogName="badmintonaccount" baseTableName="badminton_hire" constraintName="FK_65dmi25k1tvsqdqeew5iogqg9" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableCatalogName="badmintonaccount" referencedTableName="player"/>
+    </changeSet>
+</databaseChangeLog>
